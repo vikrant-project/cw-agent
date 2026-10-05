@@ -1,0 +1,16 @@
+[Unit]
+Description=Coding Workshop ten-role coordinator
+After=network-online.target coding-gateway.service
+Wants=coding-gateway.service
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+Type=simple
+WorkingDirectory=/opt/coding-workshop
+Environment=CODING_ROOT=/opt/coding-workshop
+ExecStart=/usr/bin/python3 /opt/coding-workshop/worker.py
+Restart=on-failure
+RestartSec=20
+UMask=0027
+[Install]
+WantedBy=multi-user.target

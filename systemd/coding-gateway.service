@@ -1,0 +1,16 @@
+[Unit]
+Description=Coding Workshop provider CONNECT gateway
+After=network-online.target
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+WorkingDirectory=/opt/coding-workshop
+Environment=CODING_ROOT=/opt/coding-workshop
+RuntimeDirectory=coding-workshop
+RuntimeDirectoryMode=0700
+ExecStart=/usr/bin/python3 /opt/coding-workshop/model_gateway.py
+Restart=on-failure
+RestartSec=20
+UMask=0077
+[Install]
+WantedBy=multi-user.target

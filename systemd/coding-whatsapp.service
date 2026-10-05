@@ -1,0 +1,23 @@
+[Unit]
+Description=Coding Workshop isolated per-user WhatsApp sessions
+After=network-online.target coding-internal.service
+Wants=coding-internal.service
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+User=coding-whatsapp
+Group=coding-whatsapp
+SupplementaryGroups=coding-portal
+WorkingDirectory=/opt/coding-workshop/whatsapp
+Environment=CODING_ROOT=/opt/coding-workshop
+ExecStart=/usr/bin/node /opt/coding-workshop/whatsapp/bridge.mjs
+Restart=on-failure
+RestartSec=20
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/opt/coding-workshop/bridge-private
+[Install]
+WantedBy=multi-user.target

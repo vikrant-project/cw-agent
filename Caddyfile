@@ -1,0 +1,11 @@
+{
+ admin off
+ auto_https disable_redirects
+}
+https://YOUR_PUBLIC_HOST:9870 {
+ tls /opt/coding-workshop/private/letsencrypt/live/YOUR_PUBLIC_HOST/fullchain.pem /opt/coding-workshop/private/letsencrypt/live/YOUR_PUBLIC_HOST/privkey.pem
+ reverse_proxy 127.0.0.1:9872 {
+  header_up X-Forwarded-Proto https
+  header_up X-Real-IP {remote_host}
+ }
+}

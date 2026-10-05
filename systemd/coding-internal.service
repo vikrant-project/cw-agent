@@ -1,0 +1,14 @@
+[Unit]
+Description=Coding Workshop private messaging API
+After=network.target
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+WorkingDirectory=/opt/coding-workshop
+Environment=CODING_ROOT=/opt/coding-workshop
+ExecStart=/usr/bin/python3 /opt/coding-workshop/internal.py
+Restart=on-failure
+RestartSec=20
+UMask=0077
+[Install]
+WantedBy=multi-user.target

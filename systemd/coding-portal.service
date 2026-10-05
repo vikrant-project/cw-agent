@@ -1,0 +1,22 @@
+[Unit]
+Description=Coding Workshop loopback PHP portal
+After=network.target
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+User=coding-portal
+Group=coding-portal
+WorkingDirectory=/opt/coding-workshop/portal
+Environment=CODING_ROOT=/opt/coding-workshop
+Environment=PHP_CLI_SERVER_WORKERS=4
+ExecStart=/usr/bin/php -d display_errors=0 -S 127.0.0.1:9872 -t /opt/coding-workshop/portal /opt/coding-workshop/portal/router.php
+Restart=on-failure
+RestartSec=20
+UMask=0007
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/opt/coding-workshop/portal-data
+[Install]
+WantedBy=multi-user.target

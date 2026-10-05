@@ -1,0 +1,14 @@
+# CW Agent
+
+> Autonomous task orchestration with existing AntiGravity CLI profiles, WhatsApp, a PHP portal, sandboxed execution and independent native-artifact review.
+
+## Documentation
+- [Source and overview](https://github.com/vikrant-project/cw-agent)
+- [Architecture](https://github.com/vikrant-project/cw-agent/blob/main/docs/ARCHITECTURE.md)
+- [Deployment](https://github.com/vikrant-project/cw-agent/blob/main/docs/DEPLOYMENT.md)
+- [Capabilities and limits](https://github.com/vikrant-project/cw-agent/blob/main/docs/CAPABILITIES.md)
+- [Validation scope](https://github.com/vikrant-project/cw-agent/blob/main/docs/VALIDATION.md)
+- [Security](https://github.com/vikrant-project/cw-agent/blob/main/SECURITY.md)
+
+## Accuracy notes
+The project is experimental and has no granted software license in this snapshot. The internal controller tests are excluded from public source. Provider availability and output quality are conditional. Successful generation is separate from verified completion. Public documentation contains no private credentials or user project histories.

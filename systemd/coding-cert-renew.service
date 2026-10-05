@@ -1,0 +1,5 @@
+[Unit]
+Description=Renew Coding Workshop IP certificate
+[Service]
+Type=oneshot
+ExecStart=/opt/coding-certbot/bin/certbot renew --quiet --no-random-sleep-on-renew --config-dir /opt/coding-workshop/private/letsencrypt --work-dir /opt/coding-workshop/private/letsencrypt-work --logs-dir /opt/coding-workshop/private/letsencrypt-logs --deploy-hook "/usr/bin/systemctl restart coding-tls.service"

@@ -1,0 +1,16 @@
+[Unit]
+Description=Coding Workshop HTTPS preview
+After=coding-portal.service
+Wants=coding-portal.service
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+WorkingDirectory=/opt/coding-workshop
+Environment=XDG_DATA_HOME=/opt/coding-workshop/private/caddy-data
+Environment=XDG_CONFIG_HOME=/opt/coding-workshop/private/caddy-config
+ExecStart=/usr/bin/caddy run --config /opt/coding-workshop/Caddyfile --adapter caddyfile
+Restart=on-failure
+RestartSec=20
+UMask=0077
+[Install]
+WantedBy=multi-user.target

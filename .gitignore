@@ -1,0 +1,30 @@
+# Private runtime data and local credentials
+private/
+portal-data/
+bridge-private/
+projects/
+downloads/
+media-staging/
+*.sqlite*
+*.db
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+.env.*
+!.env.example
+deployment.local.json
+*oauth*
+*token*.json
+*.log
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+venv/
+# Internal tests deliberately excluded from this public snapshot
+tests/
+test_*.py
+*.test.*
+work/

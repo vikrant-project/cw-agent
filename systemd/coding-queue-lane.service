@@ -1,0 +1,16 @@
+[Unit]
+Description=CW Agent second bounded queue lane
+After=network-online.target coding-gateway.service coding-worker.service
+Wants=coding-gateway.service coding-worker.service
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+Type=simple
+WorkingDirectory=/opt/coding-workshop
+Environment=CODING_ROOT=/opt/coding-workshop
+ExecStart=/usr/bin/python3 /opt/coding-workshop/queue_worker.py
+Restart=on-failure
+RestartSec=20
+UMask=0027
+[Install]
+WantedBy=multi-user.target

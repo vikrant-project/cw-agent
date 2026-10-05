@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vikrant-project.github.io/cw-agent/sitemap.xml

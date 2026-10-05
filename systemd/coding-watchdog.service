@@ -1,0 +1,14 @@
+[Unit]
+Description=Coding Workshop independent health monitor
+After=coding-worker.service
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+[Service]
+WorkingDirectory=/opt/coding-workshop
+Environment=CODING_ROOT=/opt/coding-workshop
+ExecStart=/usr/bin/python3 /opt/coding-workshop/watchdog.py
+Restart=on-failure
+RestartSec=20
+UMask=0077
+[Install]
+WantedBy=multi-user.target

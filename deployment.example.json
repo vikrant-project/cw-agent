@@ -1,0 +1,7 @@
+{
+  "vps_host": "YOUR_VPS_HOST",
+  "ssh_user": "YOUR_SSH_USER",
+  "ssh_password": "YOUR_SSH_PASSWORD",
+  "public_host": "YOUR_PUBLIC_HOST",
+  "note": "Documentation example only. The application does not load SSH credentials from this file. Setup generates private runtime keys outside version control."
+}

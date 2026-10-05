@@ -1,0 +1,28 @@
+{
+  "model": "gemini-3.1-pro-high",
+  "model_timeout": 360,
+  "max_model_calls": 100,
+  "max_turns_per_role": 16,
+  "daily_model_calls": 600,
+  "max_revision_cycles": 3,
+  "task_deadline": 7200,
+  "command_timeout": 90,
+  "max_project_bytes": 16777216,
+  "max_file_bytes": 262144,
+  "runner_user": "coding-runner",
+  "research_hosts": [
+    "docs.python.org",
+    "www.php.net",
+    "developer.mozilla.org",
+    "nodejs.org",
+    "playwright.dev",
+    "docs.flutter.dev",
+    "react.dev",
+    "docs.expo.dev",
+    "developer.android.com",
+    "www.rfc-editor.org",
+    "www.cloudflare.com",
+    "www.cisa.gov",
+    "gitbrent.github.io"
+  ]
+}
